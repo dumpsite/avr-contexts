@@ -135,12 +135,12 @@ typedef union __extfuncptr_t {
   struct {
     uint16_t lower128k;
     uint8_t  upperextension;
-  };
+  } __attribute__ ((packed));
   struct {
     uint8_t ptr_lsb;
     uint8_t ptr_med;
     uint8_t ptr_msb;
-  };
+  } __attribute__ ((packed));
 } __attribute__ ((packed)) extfuncptr_t;
 #endif
 
@@ -324,8 +324,13 @@ typedef union {struct { __EXTFUNC_funcHELPERtypename(typename) fptr; uint8_t ein
 #	define EXTFUNC_NULL						{.xptr = __EXTFUNC_ptrNULL}
 #	define EXTFUNC_getPtr(functionname, typename) ({							\
   __EXTFUNC_functypename(typename) result;									\
-  result.fptr = &functionname;											\
-  result.eind =	__EXTFUNC__builtin_avr_flash_segment(functionname);						\
+  asm volatile (												\
+      "ldi    %A[output],   pm_lo8(" #functionname ")"  "\n\t"							\
+      "ldi    %B[output],   pm_hi8(" #functionname ")"  "\n\t"							\
+      "ldi    %C[output],   pm_hh8(" #functionname ")"  "\n\t"							\
+       : [output]   "=d" (result.xptr)										\
+       :													\
+   );														\
   result;													\
 })
 
