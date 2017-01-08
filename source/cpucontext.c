@@ -58,7 +58,7 @@ EXTFUNC_void(int8_t, cpucontext_finalize) {
 
 #define __cpuswtch_bckreg	"r24"
 #define __cpuswtch_bckregh	"r25"
-EXTFUNCFAR __attribute__((noinline,used,naked,weak)) void __cpucontext_switch(void) {
+EXTFUNCFAR __attribute__((noinline,used,naked,no_instrument_function,weak)) void __cpucontext_switch(void) {
   /* expects current context in "X"-reg and nextcontext in "Z"-reg */
   asm volatile (
 #if (CPUCONTEXT_EXTRASYMBOLS)
@@ -297,7 +297,7 @@ EXTFUNC(cpucontext_t*, cpucontext_switch, cpucontext_t* tocontext) {
 }
 
 
-__attribute__ ((naked, weak))
+__attribute__ ((naked, no_instrument_function, weak))
 EXTFUNCFAR __attribute__((noinline,used)) void __cpucontext_start(void) {
   _MemoryBarrier();
 

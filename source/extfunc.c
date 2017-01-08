@@ -20,7 +20,7 @@ uint8_t __extfunc_EIND_default = 0xff;
 #if (EXTFUNC_NOEXT)
 #else
 /* to be called indirectly - further optimizable (cycles at sts and use "in") --> weak symbol */
-__attribute__ ((naked, weak))
+__attribute__ ((naked, no_instrument_function, weak))
 void __extfunc_trampolineCallTarget(extfuncptr_t *__extfunc_self) {
 
 #ifdef __EXTFUNC_SpecialTrampolineCode
