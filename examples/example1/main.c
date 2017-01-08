@@ -59,7 +59,7 @@ EXTFUNC(uint16_t, aFunction, void* parameter1, uint8_t parameter2) {
   // do sth here...
   
   // return a value...
-  return 0;
+  return 1;
 }
 
 int main(void) {
