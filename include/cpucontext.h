@@ -49,6 +49,8 @@
 #include <stdint.h>
 
 #include <avr/io.h>
+#include <avr/cpufunc.h>
+
 
 #ifdef CPUCONTEXT_C_946ec1db093e4a5680ae7b4f75dca09c
 #	define CPUCONTEXTPUBLIC
@@ -58,6 +60,14 @@
 
 #ifndef CPUCONTEXT_EXTRASYMBOLS
 #	define	CPUCONTEXT_EXTRASYMBOLS		0
+#endif
+
+/* workaround some gcc behaviour causing avr-libc macro to fail */
+#if ((defined(CPUCONTEXT_REPLACEMEMBARRIER)) || (__GNUC__ < 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ <= 7)))
+#	ifdef _MemoryBarrier
+#		undef _MemoryBarrier
+#	endif
+#	define _MemoryBarrier(x)	__asm__ __volatile__("":::"memory")
 #endif
 
 /* access to specific register should be done via macros if at all */

@@ -20,7 +20,6 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 
-#include <avr/cpufunc.h>
 
 static cpucontext_t	__cpucontext_main_context = {.stack=(void*)RAMEND};
 cpucontext_t*   cpucontext_main_context = &__cpucontext_main_context;
