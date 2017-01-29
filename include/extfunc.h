@@ -80,6 +80,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+/* to declare NULL */
+#include <string.h>
+
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 
