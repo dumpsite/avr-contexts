@@ -107,21 +107,49 @@ typedef struct __cpucontext_stack_t {
   volatile uint8_t	r18;
   volatile uint8_t	r17;
   volatile uint8_t	r16;
+#ifndef CONFIG_CPUCONTEXT_NO_R15
   volatile uint8_t	r15;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R14
   volatile uint8_t	r14;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R13
   volatile uint8_t	r13;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R12
   volatile uint8_t	r12;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R11
   volatile uint8_t	r11;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R10
   volatile uint8_t	r10;
+#endif
 
+#ifndef CONFIG_CPUCONTEXT_NO_R9
   volatile uint8_t	r9;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R8
   volatile uint8_t	r8;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R7
   volatile uint8_t	r7;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R6
   volatile uint8_t	r6;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R5
   volatile uint8_t	r5;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R4
   volatile uint8_t	r4;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R3
   volatile uint8_t	r3;
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R2
   volatile uint8_t	r2;
+#endif
   volatile uint8_t	r1;
   volatile uint8_t	r0;
 

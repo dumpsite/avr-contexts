@@ -65,20 +65,48 @@ EXTFUNCFAR __attribute__((noinline,used,naked,no_instrument_function,weak)) void
 #endif
     "push	r0							\n\t"
     "push	r1							\n\t"
+#ifndef CONFIG_CPUCONTEXT_NO_R2
     "push	r2							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R3
     "push	r3							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R4
     "push	r4							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R5
     "push	r5							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R6
     "push	r6							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R7
     "push	r7							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R8
     "push	r8							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R9
     "push	r9							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R10
     "push	r10							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R11
     "push	r11							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R12
     "push	r12							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R13
     "push	r13							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R14
     "push	r14							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R15
     "push	r15							\n\t"
+#endif
 
     "push	r16							\n\t"
     "push	r17							\n\t"
@@ -222,20 +250,48 @@ EXTFUNCFAR __attribute__((noinline,used,naked,no_instrument_function,weak)) void
     "pop	r17							\n\t"
     "pop	r16							\n\t"
 
+#ifndef CONFIG_CPUCONTEXT_NO_R15
     "pop	r15							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R14
     "pop	r14							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R13
     "pop	r13							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R12
     "pop	r12							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R11
     "pop	r11							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R10
     "pop	r10							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R9
     "pop	r9							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R8
     "pop	r8							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R7
     "pop	r7							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R6
     "pop	r6							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R5
     "pop	r5							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R4
     "pop	r4							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R3
     "pop	r3							\n\t"
+#endif
+#ifndef CONFIG_CPUCONTEXT_NO_R2
     "pop	r2							\n\t"
+#endif    
     "pop	r1							\n\t"
     "pop	r0							\n\t"
 #if (CPUCONTEXT_EXTRASYMBOLS)
